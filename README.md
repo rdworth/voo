@@ -13,4 +13,4 @@ corresponding point in the video.
 
 ## License
 
-This software is [MIT](LICENSE.txt) licensed.
+This software is [MIT](./LICENSE.txt) licensed.
