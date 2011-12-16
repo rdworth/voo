@@ -1,0 +1,16 @@
+/*.part {
+  background: #fdf;
+}
+
+.part:nth-child(even) {
+  background: #ffd;
+}
+*/
+
+.part {
+  outline: 1px solid #aaa;
+}
+
+.highlight {
+  background: #7f7;
+}
