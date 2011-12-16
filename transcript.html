@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>transcript</title>
+
+	<script src="https://raw.github.com/gist/1211416/raf.js"></script>
+	<script src="http://code.jquery.com/jquery-git.js"></script>
+	<script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script>
+
+	<script>
+
+	var savedtimes = [],
+	times = [
+		0.5,
+		0.8,
+		1.1,
+
+		2.7,
+		3.0,
+		3.7,
+		3.9,
+		4.1,
+		4.3,
+		4.7,
+
+		5.5,
+
+		6.0,
+		6.3,
+		6.4,
+		6.5,
+		6.6,
+
+		8.4,
+		9.4,
+		9.5,
+		9.8
+	],
+	words = [
+		"anonymous",
+		"spoke",
+		"saying",
+
+		"ie",
+		"v",
+		"one",
+		"point",
+		"four",
+		"point",
+		"one",
+
+		"",
+
+		"one",
+		"point",
+		"four",
+		"point",
+		"four",
+
+		"problems",
+		"in",
+		"unique",
+		"ways"
+	];
+
+	$(function() {
+
+		var pop = Popcorn("#voo");
+
+		requestAnimFrame(function raf() {
+			$("#time").val( pop.currentTime() );
+			requestAnimFrame( raf );
+		});
+
+		$("button").on("click", function() {
+			savedtimes.push(
+				pop.currentTime()
+			);
+			localStorage.setItem("savedtimes", JSON.stringify(savedtimes));
+		});
+
+		$(document).keyup(function( e ) {
+			if ( e.which === 32 ) {
+				if ( pop.paused() ) {
+					pop.play();
+				} else {
+					pop.pause();
+				}
+			}
+		});
+
+
+		$.each( times, function( i, time ) {
+			pop.cue( time, function() {
+				console.log( words[ i ] );
+			});
+		});
+
+	});
+	</script>
+</head>
+<body>
+<video id="voo" controls>
+<source src="voodoo-demo.m4v"></source>
+</video>
+
+<input type="text" id="time" value="">
+<button>Save</button>
+
+</body>
+
+
+</html>
+
