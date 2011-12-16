@@ -13,4 +13,4 @@ corresponding point in the video.
 
 ## License
 
-This software is [MIT](/rdworth/voo/LICENSE.txt) licensed.
+This software is MIT licensed. See LICENSE.txt for details.
