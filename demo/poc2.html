@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>transcript</title>
+
+	<script src="https://raw.github.com/gist/1211416/raf.js"></script>
+	<script src="http://code.jquery.com/jquery-git.js"></script>
+	<script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script>
+
+	<script>
+
+	var savedtimes = [],
+	times = [
+		0.5,
+		0.8,
+		1.1,
+
+		2.7,
+		3.0,
+		3.7,
+		3.9,
+		4.1,
+		4.3,
+		4.7,
+
+		5.5,
+
+		6.0,
+		6.3,
+		6.4,
+		6.5,
+		6.6,
+
+		8.4,
+		9.4,
+		9.5,
+		9.8
+	],
+	words = [
+		"anonymous",
+		"spoke",
+		"saying",
+
+		"ie",
+		"v",
+		"one",
+		"point",
+		"four",
+		"point",
+		"one",
+
+		"",
+
+		"one",
+		"point",
+		"four",
+		"point",
+		"four",
+
+		"problems",
+		"in",
+		"unique",
+		"ways"
+	];
+
+	$(function() {
+
+		var pop = Popcorn("#voo");
+		var trans = $("#voo-transcript");
+
+		$.each( times, function( i, time ) {
+			pop.cue( time, function() {
+				trans.find(".active").removeClass("active");
+				trans.find(".vkf-" + i).addClass("active");
+			});
+		});
+
+	});
+	</script>
+	<style>
+	#voo-transcript { float: right; width: 400px; font-size: 2em; }
+	#voo-transcript .active { background: lightBlue; }
+	</style>
+</head>
+<body>
+<video id="voo" controls>
+<source src="../assets/voo-demo.m4v"></source>
+</video>
+<div id="voo-transcript">
+<p>
+<span class="vkf-0">Anonymous</span> <span class="vkf-1">spoke</span> <span class="vkf-2">saying</span>:
+<blockquote><span class="vkf-3">IE</span>, <span class="vkf-4">V</span><span class="vkf-5">1</span><span class="vkf-6">.</span><span class="vkf-7">4</span><span class="vkf-8">.</span><span class="vkf-9">1</span><span class="vkf-10">-</span><span class="vkf-11">1</span><span class="vkf-12">.</span><span class="vkf-13">4</span><span class="vkf-14">.</span><span class="vkf-15">4</span> <span class="vkf-16">problems</span> <span class="vkf-17">in</span> <span class="vkf-18">unique</span> <span class="vkf-19">ways</span></blockquote>
+</p>
+</div>
+
+<input type="text" id="time" value="">
+<button>Save</button>
+
+</body>
+
+
+</html>
+
+poc.html
