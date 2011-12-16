@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>transcript</title>
+
+	<script src="https://raw.github.com/gist/1211416/raf.js"></script>
+	<script src="http://code.jquery.com/jquery-git.js"></script>
+	<script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script>
+
+	<script>
+
+	var savedtimes = [],
+	times =[2.336, 3.947, 5.191, 6.872, 10.216, 13.049, 17.808, 19.558, 22.079, 25.656, 30.128, 32.807, 34.062, 35.656, 38.968, 41.04, 43.401, 45.16, 46.272, 47.759, 50.48, 53.103, 54.414, 55.856, 58.944, 60.22, 62.424, 63.471, 64.897, 66.859, 68.699, 71.392, 72.111, 72.978, 73.831],
+	words = ["You think water moves fast?", "You should see ice.", "It moves like it has a mind.", "Like it knows it killed the world once and got a taste for murder.", "After the avalanche, it took us a week to climb out.", "Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide...", "and only five made it out.", "Now we took an oath, that I'm breaking now.", "We said we'd say it was the snow that killed the other two, but it wasn't.", "Nature is lethal but it doesn't hold a candle to man.", "Now that we know who you are, I know who I am.", "I'm not a mistake!", "It all makes sense!", "In a comic, you know how you can tell who the arch-villain's going to be?", "He's the exact opposite of the hero.", "And most times they're friends, like you and me!", "I should've known way back when...", "You know why, David?", "Because of the kids.", "They called me Mr Glass.", "Yeah, I like animals better than people sometimes...", "Especially dogs.", "Dogs are the best.", "Every time you come home, they act like they haven't seen you in a year.", "And the good thing about dogs...", "is they got different dogs for different people.", "Like pit bulls.", "The dog of dogs.", "Pit bull can be the right man's best friend...", "or the wrong man's worst enemy.", "You going to give me a dog for a pet, give me a pit bull.", "Give me...", "Raoul.", "Right, Omar?", "Give me Raoul."];
+
+	$(function() {
+
+		var pop = Popcorn("#voo");
+		var trans = $("#voo-transcript");
+
+		$.each( times, function( i, time ) {
+			pop.cue( time, function() {
+				trans.find(".active").removeClass("active");
+				trans.find(".vkf-" + i).addClass("active");
+			});
+		});
+
+
+	});
+	</script>
+	<style>
+	#voo-transcript { float: right; width: 400px; font-size: 2em; }
+	#voo-transcript .active { background: lightBlue; }
+	</style>
+</head>
+<body>
+<video id="voo" controls>
+<source src="../assets/slipsum.webm"></source>
+</video>
+<div id="voo-transcript">
+<!-- <p>
+<span class="vkf-0">Anonymous</span> <span class="vkf-1">spoke</span> <span class="vkf-2">saying</span>:
+<blockquote><span class="vkf-3">IE</span>, <span class="vkf-4">V</span><span class="vkf-5">1</span><span class="vkf-6">.</span><span class="vkf-7">4</span><span class="vkf-8">.</span><span class="vkf-9">1</span><span class="vkf-10">-</span><span class="vkf-11">1</span><span class="vkf-12">.</span><span class="vkf-13">4</span><span class="vkf-14">.</span><span class="vkf-15">4</span> <span class="vkf-16">problems</span> <span class="vkf-17">in</span> <span class="vkf-18">unique</span> <span class="vkf-19">ways</span></blockquote>
+</p>
+           -->
+
+					<p><span data-time="2.336" class="vkf-0">You think water moves fast?</span> <span data-time="3.947" class="vkf-1">You should see ice.</span> <span data-time="5.191" class="vkf-2">It moves like it has a mind.</span> <span data-time="6.872" class="vkf-3">Like it knows it killed the world once and got a taste for murder.</span> <span data-time="10.216" class="vkf-4">After the avalanche, it took us a week to climb out.</span> <span data-time="13.049" class="vkf-5">Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide...</span> <span data-time="17.808" class="vkf-6">and only five made it out.</span> <span data-time="19.558" class="vkf-7">Now we took an oath, that I'm breaking now.</span> <span data-time="22.079" class="vkf-8">We said we'd say it was the snow that killed the other two, but it wasn't.</span> <span data-time="25.656" class="vkf-9">Nature is lethal but it doesn't hold a candle to man.</span></p>
+					<p><span data-time="30.128" class="vkf-10">Now that we know who you are, I know who I am.</span> <span data-time="32.807" class="vkf-11">I'm not a mistake!</span> <span data-time="34.062" class="vkf-12">It all makes sense!</span> <span data-time="35.656" class="vkf-13">In a comic, you know how you can tell who the arch-villain's going to be?</span> <span data-time="38.968" class="vkf-14">He's the exact opposite of the hero.</span> <span data-time="41.04" class="vkf-15">And most times they're friends, like you and me!</span> <span data-time="43.401" class="vkf-16">I should've known way back when...</span> <span data-time="45.16" class="vkf-17">You know why, David?</span> <span data-time="46.272" class="vkf-18">Because of the kids.</span> <span data-time="47.759" class="vkf-19">They called me Mr Glass.</span></p>
+					<p><span data-time="50.48" class="vkf-20">Yeah, I like animals better than people sometimes...</span> <span data-time="53.103" class="vkf-21">Especially dogs.</span> <span data-time="54.414" class="vkf-22">Dogs are the best.</span> <span data-time="55.856" class="vkf-23">Every time you come home, they act like they haven't seen you in a year.</span> <span data-time="58.944" class="vkf-24">And the good thing about dogs...</span> <span data-time="60.22" class="vkf-25">is they got different dogs for different people.</span> <span data-time="62.424" class="vkf-26">Like pit bulls.</span> <span data-time="63.471" class="vkf-27">The dog of dogs.</span> <span data-time="64.897" class="vkf-28">Pit bull can be the right man's best friend...</span> <span data-time="66.859" class="vkf-29">or the wrong man's worst enemy.</span> <span data-time="68.699" class="vkf-30">You going to give me a dog for a pet, give me a pit bull.</span> <span data-time="71.392" class="vkf-31">Give me...</span> <span data-time="72.111" class="vkf-32">Raoul.</span> <span data-time="72.978" class="vkf-33">Right, Omar?</span> <span data-time="73.831" class="vkf-34">Give me Raoul.</span></p>
+
+</div>
+
+<input type="text" id="time" value="">
+<button>Save</button>
+
+</body>
+
+
+</html>
+
+poc.html
