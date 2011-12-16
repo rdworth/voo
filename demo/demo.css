@@ -1,0 +1,2 @@
+#voo-transcript { float: right; width: 400px; font-size: 1.5em; padding-right: 2em; height: 360px; overflow: hidden; }
+#voo-transcript .active { background: lightBlue; }
