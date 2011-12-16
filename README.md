@@ -10,3 +10,7 @@ and highlight that point in the text.
 
 Click on any text in the transcript and the player will jump to the
 corresponding point in the video.
+
+## License
+
+This software is [MIT](LICENSE.txt) licensed.
