@@ -1,6 +1,4 @@
-# voo.js
-
-## About
+# voo.js - video playback with an interactive transcript
 
 Voo provides a dynamic link between playback of a video and a well
 formatted transcript of the same.
